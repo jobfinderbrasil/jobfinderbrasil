@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    img-src 'self' data: https:;
+    script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://cdnjs.cloudflare.com;
+    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+    connect-src 'self' https://www.google-analytics.com;
+    font-src 'self' https://cdnjs.cloudflare.com;
+    object-src 'none';
+    frame-ancestors 'self';
+    base-uri 'self';
+  ">
+
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>JobFinder Brasil - Vagas, Concursos Públicos e Cursos</title>
+  <meta name="description"
+    content="Encontre vagas de emprego, concursos públicos, cursos profissionalizantes e dicas de carreira no JobFinder Brasil. Conectamos talentos a oportunidades.">
+  <meta name="keywords"
+    content="vagas de emprego, concursos públicos, cursos profissionalizantes, dicas carreira, oportunidades trabalho">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JobFinder Brasil - Vagas, Concursos e Cursos">
+  <meta property="og:description" content="Portal completo de oportunidades de emprego e carreira no Brasil">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://jobfinderbrasil.com/">
+
+  <!-- Schema Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "JobFinder Brasil",
+    "description": "Portal de vagas de emprego, concursos públicos e cursos profissionalizantes",
+    "url": "https://jobfinderbrasil.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://jobfinderbrasil.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <meta name="theme-color" content="#3B82F6">
+  <link rel="icon" type="image/x-icon" href="./imagens/fivicons/favicon1.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLSNTJXE75"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PLSNTJXE75');
+  </script>
+
+  <style>
+    /* Estilos para limitar linhas de texto */
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      /* stylelint-disable-next-line */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      /* stylelint-disable-next-line */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* CSS para H1 semântico oculto */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Estilos para o sistema de busca melhorado */
+    .sugestao-busca {
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .sugestao-busca:hover {
+      transform: translateY(-1px);
+    }
+
+    /* Loading para busca */
+    .loading-busca {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #3B82F6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Destaque para termos encontrados */
+    .termo-destacado {
+      background-color: #FFFBEB;
+      border: 1px solid #F59E0B;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- H1 Semântico para SEO -->
+  <h1 class="sr-only">JobFinder Brasil - Seu Portal Completo de Oportunidades de Emprego, Concursos Públicos e Cursos
+  </h1>
+
+  <!-- 🔹 Cabeçalho -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="./index.html" class="flex items-center gap-1 select-none">
+        <h2 class="text-2xl sm:text-3xl font-bold">
+          <span class="text-blue-600">JobFinder</span><span class="text-gray-900">Brasil</span>
+        </h2>
+      </a>
+
+      <button id="menu-btn"
+        class="sm:hidden relative w-10 h-10 rounded-lg border border-gray-200 hover:bg-gray-100 transition-all group">
+        <span
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-0.5 bg-gray-800 transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-0"></span>
+        <span
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-0.5 bg-gray-800 transition-all duration-300 group-[.active]:opacity-0"></span>
+        <span
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-0.5 bg-gray-800 transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:translate-y-0"></span>
+      </button>
+
+      <nav id="menu" class="hidden sm:flex items-center gap-4">
+        <a href="#jobs-container" class="text-gray-700 font-medium hover:text-blue-600 transition"
+          data-tipo="vaga">Vagas</a>
+        <a href="#jobs-container" class="text-gray-700 font-medium hover:text-blue-600 transition"
+          data-tipo="concurso">Concursos</a>
+        <a href="#jobs-container" class="text-gray-700 font-medium hover:text-blue-600 transition"
+          data-tipo="curso">Cursos</a>
+        <a href="#jobs-container" class="text-gray-700 font-medium hover:text-blue-600 transition"
+          data-tipo="dica">Dicas</a>
+
+        <a href="https://brasilcurriculos.com.br/" target="_blank"
+          class="border border-purple-500 text-purple-600 font-semibold px-4 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition-all">
+          Gerador de Currículo
+        </a>
+
+        <a href="./contato.html" class="text-gray-700 font-medium hover:text-blue-600 transition">Contato</a>
+      </nav>
+    </div>
+
+    <div id="mobile-menu"
+      class="hidden sm:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-sm z-50 border-t border-gray-200 shadow-md">
+      <nav class="flex flex-col items-center py-4 space-y-3">
+        <a href="#jobs-container"
+          class="w-11/12 text-center text-gray-700 font-medium py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition"
+          data-tipo="vaga">Vagas</a>
+        <a href="#jobs-container"
+          class="w-11/12 text-center text-gray-700 font-medium py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition"
+          data-tipo="concurso">Concursos</a>
+        <a href="#jobs-container"
+          class="w-11/12 text-center text-gray-700 font-medium py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition"
+          data-tipo="curso">Cursos</a>
+        <a href="#jobs-container"
+          class="w-11/12 text-center text-gray-700 font-medium py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition"
+          data-tipo="dica">Dicas</a>
+        <a href="https://brasilcurriculos.com.br/" target="_blank"
+          class="w-11/12 text-center border border-purple-500 text-purple-600 font-semibold px-4 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition-all">
+          Gerador de Currículo
+        </a>
+
+        <a href="./contato.html"
+          class="w-11/12 text-center text-gray-700 font-medium py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🔹 Seção de busca -->
+  <section class="bg-blue-600 py-10">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <h2 class="text-white text-2xl sm:text-3xl font-bold mb-2">
+        Seu Portal Completo de Oportunidades
+      </h2>
+
+      <p class="text-blue-100 text-base sm:text-lg mb-6">
+        Vagas, Concursos Públicos, Cursos e Dicas para Alavancar sua Carreira
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4">
+      <form class="space-y-4 sm:space-y-0 sm:flex sm:gap-4">
+        <div class="flex-1">
+          <input type="text" id="input-busca" placeholder="Busque vagas, cursos ou concursos..."
+            class="w-full px-6 py-4 border border-gray-200 rounded-2xl text-gray-700 outline-none focus:border-blue-500 transition-all" />
+        </div>
+
+        <button type="submit"
+          class="w-full sm:w-auto bg-blue-500 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all flex items-center justify-center gap-3 shadow-md hover:shadow-lg">
+          <span>Buscar</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 🔹 Vagas em destaque -->
+  <section class="max-w-6xl mx-auto py-12 px-4">
+    <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-6 leading-tight" id="titulo-secao">
+      Postagens Recentes
+    </h2>
+
+    <!-- Container das Postagens -->
+    <div id="jobs-container" class="grid md:grid-cols-3 gap-6">
+      <!-- As postagens serão carregadas aqui pelo JavaScript -->
+    </div>
+
+    <!-- Container da Paginação -->
+    <div id="paginacao-container" class="mt-8">
+      <!-- A paginação será carregada aqui -->
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading-container" class="text-center py-8">
+      <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      <p class="text-gray-600 mt-2">Carregando postagens...</p>
+    </div>
+  </section>
+
+  <!-- 🔹 Seção de Conteúdo para SEO -->
+  <section class="max-w-6xl mx-auto py-12 px-4">
+    <div class="bg-gray-50 rounded-2xl p-8">
+      <h2 class="text-2xl font-bold mb-4 text-gray-900">JobFinder Brasil - Seu Portal de Carreira</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Encontre Oportunidades Ideais</h3>
+          <p class="text-gray-600 mb-4">
+            No JobFinder Brasil, conectamos profissionais às melhores oportunidades
+            do mercado. Buscamos vagas de emprego, concursos públicos e cursos
+            profissionalizantes em todo o território nacional.
+          </p>
+          <p class="text-gray-600">
+            Nossa plataforma é atualizada diariamente com novas vagas de trabalho,
+            editais de concursos abertos e cursos para seu desenvolvimento profissional.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Dicas de Carreira Exclusivas</h3>
+          <p class="text-gray-600 mb-4">
+            Acompanhe nossas dicas exclusivas para melhorar seu currículo,
+            se preparar para entrevistas e crescer profissionalmente.
+          </p>
+          <p class="text-gray-600">
+            Utilizamos as melhores práticas de recrutamento e seleção para
+            orientar sua jornada profissional rumo ao sucesso.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Rodapé -->
+  <footer class="bg-gray-800 text-white mt-12 py-8">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0 text-center md:text-left">
+          <h2 class="text-2xl font-bold text-blue-600">JobFinder<span class="text-white">Brasil</span></h2>
+          <p class="text-gray-400 mt-2">Conectando talentos a oportunidades</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="./sobre.html" class="text-gray-400 hover:text-white transition">Sobre</a>
+          <a href="./contato.html" class="text-gray-400 hover:text-white transition">Contato</a>
+          <a href="privacidade.html" class="text-gray-400 hover:text-white transition">Privacidade</a>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+        <p>&copy; 2025 JobFinder Brasil. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+<!-- 🔹 Scripts Externos -->
+<script src="./js/menu-mobile.js"></script>
+<script src="./js/carregarVagas.js"></script>
+<script src="./js/filtro.js"></script>
+<script src="./js/busca-inteligente.js"></script> <!-- NOVO ARQUIVO -->
+  <script>
+    // Adicionar event listeners para os links de filtro
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterLinks = document.querySelectorAll('a[data-tipo]');
+      filterLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const tipo = this.getAttribute('data-tipo');
+          if (typeof aplicarFiltro === 'function') {
+            aplicarFiltro(tipo);
+          } else {
+            console.error('Função aplicarFiltro não encontrada');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
